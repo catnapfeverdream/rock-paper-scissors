@@ -11,4 +11,7 @@ function getPlayerChoice(){
     return playerChoice
 }
 
-console.log (getPlayerChoice())
+let humanScore = 0
+
+let computerScore = 0
+

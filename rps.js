@@ -7,5 +7,8 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    
+    const playerChoice = prompt('make your move!')
+    return playerChoice
 }
+
+console.log (getPlayerChoice())

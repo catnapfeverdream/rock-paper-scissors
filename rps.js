@@ -6,35 +6,57 @@ function getComputerChoice(computerChoice){
     return computerChoice;
 }
 
-function getPlayerChoice(playerChoice){
-    const playerChoice = prompt('make your move!');
-    playerChoice = playerChoice.tolowercase();
-    return playerChoice;
+function getHumanChoice(){
+    const humanChoice = prompt('make your move!');
+    return humanChoice.toLowerCase();
 }
 
 let humanScore = 0
 
 let computerScore = 0
 
-function playRound(playerChoice,computerChoice){
-    if (playerChoice === 'rock' && computerChoice === 'paper') {
-        computerScore = ++1
-    } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        humanScore = ++1
-    } else if (playerChoice === 'rock' && computerChoice === 'rock') {
-
-    } else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        humanScore = ++1
-    } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-        computerScore = ++1
-    } else if (playerChoice === 'paper' && computerChoice === 'paper') {
-
-    } else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        computerScore = ++1
-    } else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        humanScore = ++1
-    } else if (playerChoice === 'scissors' && computerChoice === 'scissors') {
-        
+function playRound(humanChoice,computerChoice){
+    if (humanChoice === 'rock' && computerChoice === 'paper') {
+        computerScore = computerScore + 1;
+        console.log ('uh oh, you lost that one')
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+        humanScore = humanScore + 1;
+        console.log ('oh snap, you might just have a chance.')
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'rock' && computerChoice === 'rock') {
+        console.log ('tie')
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+        humanScore = humanScore + 1;
+        console.log ('oh yeah, baby, put that sweet paper on my rock...');
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
+        computerScore = computerScore + 1;
+        console.log ('you got CUT UP!');
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'paper' && computerChoice === 'paper') {
+        console.log ('tie')
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
+        computerScore = computerScore + 1;
+        console.log ('crussssssshed');
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        humanScore = humanScore + 1;
+        console.log ('sliced and diced')
+        return (humanScore, computerScore);
+    } else if (humanChoice === 'scissors' && computerChoice === 'scissors') {
+        console.log ('tie')
+        return (humanScore, computerScore);
     }
-    
 }
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
+
+console.log (humanChoice, computerChoice);
+
+console.log (humanScore, computerScore);

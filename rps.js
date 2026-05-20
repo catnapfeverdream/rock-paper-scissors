@@ -9,16 +9,12 @@ function getComputerChoice(computerChoice){
 let humanScore = 0
 let computerScore = 0
 
-//adding round message and scores//
+//adding round messages buttons and scores//
 const roundMsg = document.getElementById('round-message');
 const scoreDisplay = document.getElementById('scores');
-
-
-//remove old function to retrieve typed selection //
-//function getHumanChoice(){const humanChoice = prompt('make your move!'); return humanChoice.toLowerCase();}//
-
-// adding button UI //
-let btns = document.getElementById('btn-container')
+const finalWinner = document.getElementById('final-winner');
+const resetBtn = document.getElementById('reset-btn');
+const btns = document.getElementById('btn-container')
 
 // add event listener that wil call the playRound function with the correct playerSelection for each button //
 btns.addEventListener('click',(event) => {
@@ -28,6 +24,8 @@ btns.addEventListener('click',(event) => {
         const computerChoice = getComputerChoice();
 
         playRound(humanChoice, computerChoice);
+
+        checkGameOver();
     }
 });
 
@@ -78,23 +76,22 @@ function playRound(humanChoice,computerChoice){
     }
 }
 
-function playGame(playRound){
-    for (let i = 0; i < 5; i++)
-    {
-        let computerChoice = getComputerChoice();
-        playRound(humanChoice,computerChoice);
-    }
+//new function for game over//
 
-    if (humanScore > computerScore) {
-        roundMsg.textContent = 'you win!';
-    } else if (humanScore < computerScore) {
-        roundMsg.textContent = 'you lose...';
-    } else if (humanScore === computerScore) {
-        roundMsg.textContent = 'a tie.';
+function checkGameOver() {
+    if (humanScore === 5 || computerScore === 5) {
+        //announce the winner
+        if (humanScore === 5) {
+            finalWinner.textContent = '🎉 YOU WIN THE GAME! 🎉';
+        } else {
+            finalWinner.textContent = '💀 Computer wins... better luck next time... loser 💀'
+        }
+
+        //disable game buttons//
+        btns.disabled = true;
+
+        //show the reset button//
+
+        resetBtn.style.display = 'block';
     }
-    //delete below if all works as desired, convert to roundMsg.textContent if it doesn't.//
-    // console.log (humanScore, computerScore);
-    // console.log (humanChoice, computerChoice);
-    }
-    
-// deleted:: playGame(playRound);//
+}

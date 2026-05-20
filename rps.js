@@ -88,10 +88,34 @@ function checkGameOver() {
         }
 
         //disable game buttons//
-        btns.disabled = true;
+        document.getElementById('rock').disabled = true;
+        document.getElementById('paper').disabled = true;
+        document.getElementById('scissors').disabled = true;
 
         //show the reset button//
 
         resetBtn.style.display = 'block';
     }
 }
+
+//event listener for reset button and resetting of the game//
+
+resetBtn.addEventListener('click', () => {
+    //reset scores
+    humanScore = 0;
+    computerScore = 0;
+
+    //reset text display
+    roundMessage.textContent = 'Click something to start!';
+    scoreDisplay.textContent = 'You: 0 | Computer: 0';
+    finalWinner.textContent = '';
+
+    //re-enable game buttons
+    document.getElementById('rock').disabled = false;
+    document.getElementById('paper').disabled = false;
+    document.getElementById('scissors').disabled = false;
+
+    //hide reset button
+    resetBtn.style.display = 'none';
+});
+

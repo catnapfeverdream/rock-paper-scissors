@@ -100,13 +100,13 @@ function checkGameOver() {
 
 //event listener for reset button and resetting of the game//
 
-resetBtn.addEventListener('click', () => {
+resetBtn.addEventListener('click', (event) => {
     //reset scores
     humanScore = 0;
     computerScore = 0;
 
     //reset text display
-    roundMessage.textContent = 'Click something to start!';
+    roundMsg.textContent = 'Click something to start!';
     scoreDisplay.textContent = 'You: 0 | Computer: 0';
     finalWinner.textContent = '';
 

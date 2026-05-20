@@ -31,6 +31,7 @@ btns.addEventListener('click',(event) => {
     }
 });
 
+
 function playRound(humanChoice,computerChoice){
     if (humanChoice === 'rock' && computerChoice === 'paper') {
         computerScore = computerScore + 1;
@@ -78,23 +79,22 @@ function playRound(humanChoice,computerChoice){
 }
 
 function playGame(playRound){
-    // removing five round logic for now to be plugged back in below
-    // for (let i = 0; i < 5; i++) //
+    for (let i = 0; i < 5; i++)
     {
         let computerChoice = getComputerChoice();
         playRound(humanChoice,computerChoice);
     }
 
     if (humanScore > computerScore) {
-        console.log ('you win!');
+        roundMsg.textContent = 'you win!';
     } else if (humanScore < computerScore) {
-        console.log ('you lose...');
+        roundMsg.textContent = 'you lose...';
     } else if (humanScore === computerScore) {
-        console.log ('a tie.');
+        roundMsg.textContent = 'a tie.';
     }
-
-    console.log (humanScore, computerScore);
-    console.log (humanChoice, computerChoice);
+    //delete below if all works as desired, convert to roundMsg.textContent if it doesn't.//
+    // console.log (humanScore, computerScore);
+    // console.log (humanChoice, computerChoice);
     }
     
 // deleted:: playGame(playRound);//

@@ -9,6 +9,11 @@ function getComputerChoice(computerChoice){
 let humanScore = 0
 let computerScore = 0
 
+//adding round message and scores//
+const roundMsg = document.getElementById('round-message');
+const scoreDisplay = document.getElementById('score');
+
+
 //remove old function to retrieve typed selection //
 //function getHumanChoice(){const humanChoice = prompt('make your move!'); return humanChoice.toLowerCase();}//
 
@@ -23,44 +28,42 @@ btns.addEventListener('click',(event) => {
         const computerChoice = getComputerChoice();
 
         playRound(humanChoice, computerChoice);
-
-        console.log('Scores -> human: ${humanScore} | Computer: ${computerScore}');
     }
 });
 
 function playRound(humanChoice,computerChoice){
     if (humanChoice === 'rock' && computerChoice === 'paper') {
         computerScore = computerScore + 1;
-        console.log ('uh oh, you lost that one')
+        roundMsg.textContent = 'uh oh, you lost that one'
         return [humanScore, computerScore];
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         humanScore = humanScore + 1;
-        console.log ('oh snap, you might just have a chance.')
+        roundMsg.textContent = 'oh snap, you might just have a chance.'
         return [humanScore, computerScore];
     } else if (humanChoice === 'rock' && computerChoice === 'rock') {
-        console.log ('tie')
+        roundMsg.textContent = 'tie'
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         humanScore = humanScore + 1;
-        console.log ('oh yeah, baby, put that sweet paper on my rock...');
+        roundMsg.textContent = 'oh yeah, baby, put that sweet paper on my rock...';
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         computerScore = computerScore + 1;
-        console.log ('you got CUT UP!');
+        roundMsg.textContent = 'you got CUT UP!';
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'paper') {
-        console.log ('tie')
+        roundMsg.textContent = 'tie'
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         computerScore = computerScore + 1;
-        console.log ('crussssssshed');
+        roundMsg.textContent = 'crussssssshed';
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         humanScore = humanScore + 1;
-        console.log ('sliced and diced')
+        roundMsg.textContent = 'sliced and diced'
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'scissors') {
-        console.log ('tie')
+        roundMsg.textContent = 'tie'
         return [humanScore, computerScore];
     }
 }

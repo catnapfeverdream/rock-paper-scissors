@@ -7,6 +7,14 @@
     padding: 1px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+}
+
 button {
     background-color: yellow;
     border: 3px solid white;
@@ -17,6 +25,13 @@ button {
     font-weight: 1000;
     font-size:2em;
     text-align: center;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 #results {

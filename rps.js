@@ -115,6 +115,7 @@ resetBtn.addEventListener('click', (event) => {
     roundMsg.textContent = 'Click something to start!';
     scoreDisplay.textContent = 'You: 0 | Computer: 0';
     finalWinner.textContent = '';
+    roundPicks.textContent = '- -';
 
     //re-enable game buttons
     document.getElementById('rock').disabled = false;

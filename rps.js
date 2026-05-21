@@ -27,7 +27,7 @@ btns.addEventListener('click',(event) => {
 
         const computerChoice = getComputerChoice();
 
-        roundPicks.textContent = `You: ${humanChoice} | Computer: ${ComputerChoice}`;
+        roundPicks.textContent = `You: ${humanChoice} | Computer: ${computerChoice}`;
 
         playRound(humanChoice, computerChoice);
 

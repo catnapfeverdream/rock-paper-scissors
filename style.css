@@ -18,3 +18,10 @@ button {
     font-size:2em;
     text-align: center;
 }
+
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

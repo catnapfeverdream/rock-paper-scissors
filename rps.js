@@ -16,12 +16,18 @@ const finalWinner = document.getElementById('final-winner');
 const resetBtn = document.getElementById('reset-btn');
 const btns = document.getElementById('btn-container')
 
+// create function to show humanChoice and computerChoice each input add roundPicks.textContent to btns.EventListener below//
+const roundPicks = document.getElementById('round-picks');
+
+
 // add event listener that wil call the playRound function with the correct playerSelection for each button //
 btns.addEventListener('click',(event) => {
     if (event.target.tagName === 'BUTTON') {
         const humanChoice = event.target.id;
 
         const computerChoice = getComputerChoice();
+
+        roundPicks.textContent = `You: ${humanChoice} | Computer: ${ComputerChoice}`;
 
         playRound(humanChoice, computerChoice);
 
@@ -118,4 +124,3 @@ resetBtn.addEventListener('click', (event) => {
     //hide reset button
     resetBtn.style.display = 'none';
 });
-

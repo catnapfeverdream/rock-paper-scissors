@@ -1,10 +1,19 @@
 * {
     text-align: center;
+    justify-content: center;
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    background-color: black;
 }
 
 button {
-    width: 100px;
-    height: 100px;
-    font-weight: 900;
+    background-color: yellow;
+    border: 3px solid white;
+    color: slategrey;
+    width: 200px;
+    height: 200px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 1000;
+    font-size:2em;
     text-align: center;
 }

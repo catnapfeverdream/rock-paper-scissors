@@ -40,44 +40,44 @@ function playRound(humanChoice,computerChoice){
     if (humanChoice === 'rock' && computerChoice === 'paper') {
         computerScore = computerScore + 1;
         roundMsg.textContent = 'uh oh, you lost that one'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
         humanScore = humanScore + 1;
         roundMsg.textContent = 'oh snap, you might just have a chance.'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'rock' && computerChoice === 'rock') {
         roundMsg.textContent = 'tie'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         humanScore = humanScore + 1;
         roundMsg.textContent = 'oh yeah, baby, put that sweet paper on my rock...';
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         computerScore = computerScore + 1;
         roundMsg.textContent = 'you got CUT UP!';
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'paper' && computerChoice === 'paper') {
         roundMsg.textContent = 'tie'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         computerScore = computerScore + 1;
         roundMsg.textContent = 'crussssssshed';
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         humanScore = humanScore + 1;
         roundMsg.textContent = 'sliced and diced'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     } else if (humanChoice === 'scissors' && computerChoice === 'scissors') {
         roundMsg.textContent = 'tie'
-        scoreDisplay.textContent = `You: ${humanScore} | Computer: ${computerScore}`
+        scoreDisplay.textContent = `${humanScore} | ${computerScore}`
         return [humanScore, computerScore];
     }
 }
